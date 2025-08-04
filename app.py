@@ -126,7 +126,8 @@ def create_radar_chart(scores):
             )),
         showlegend=False,
         title="Your MBTI Dimension Scores",
-        height=400
+        height=400,
+        dragmode=False
     )
     
     return fig
@@ -229,7 +230,10 @@ def main():
                     # Radar chart
                     dimension_scores = calculate_mbti_dimensions(responses, predicted_type)
                     fig = create_radar_chart(dimension_scores)
-                    st.plotly_chart(fig, use_container_width=True)
+                    st.plotly_chart(fig, use_container_width=True,config={
+    'staticPlot': True,        
+    'displayModeBar': False    
+})
                 
                 # Show top predictions with probabilities
                 st.subheader("Top Personality Type Predictions")
