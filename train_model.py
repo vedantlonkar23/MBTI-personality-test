@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 def load_and_preprocess_data(file_path):
-    """Load and preprocess the MBTI dataset"""
+  
     print("Loading dataset...")
     df = pd.read_csv(file_path, encoding='Windows-1252')
     
