@@ -29,7 +29,7 @@ def load_and_preprocess_data(file_path):
     return X, y, df
 
 def train_model(X, y):
-    """Train the Random Forest model"""
+    #Train the Random Forest model
     print("\nSplitting data...")
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.2, random_state=42, stratify=y
@@ -61,7 +61,7 @@ def train_model(X, y):
     return model, X_test, y_test, y_pred
 
 def analyze_feature_importance(model, feature_names):
-    """Analyze and plot feature importance"""
+    #Analyze and plot feature importance
     print("\nAnalyzing feature importance...")
     
     # Get feature importance
@@ -89,7 +89,7 @@ def analyze_feature_importance(model, feature_names):
     return feature_importance_df
 
 def plot_confusion_matrix(y_test, y_pred):
-    """Plot confusion matrix"""
+    #Plot confusion matrix
     plt.figure(figsize=(14, 12))
     cm = confusion_matrix(y_test, y_pred)
     
@@ -106,7 +106,7 @@ def plot_confusion_matrix(y_test, y_pred):
     plt.show()
 
 def save_model_and_features(model, feature_names):
-    """Save the trained model and feature names"""
+    #Save the trained model and feature names
     print("\nSaving model...")
     
     # Save the model
@@ -121,7 +121,7 @@ def save_model_and_features(model, feature_names):
     print("Feature names saved as 'feature_names.txt'")
 
 def main():
-    """Main training pipeline"""
+    #Main training Pipeline
     # Load and preprocess data
     X, y, df = load_and_preprocess_data('16P.csv')
     
